@@ -99,11 +99,13 @@ cd ..
 
 Démarrer l’API :
 
+Pour éviter le conflit avec VoiceScope, le backend 5G utilise le port `8001` :
+
 ```powershell
-python -m uvicorn api.main:app --host 127.0.0.1 --port 8000
+python -m uvicorn api.main:app --host 127.0.0.1 --port 8001
 ```
 
-Le backend est accessible sur [http://127.0.0.1:8000](http://127.0.0.1:8000). La documentation interactive FastAPI est disponible sur `/docs`.
+La documentation interactive FastAPI est accessible sur [http://127.0.0.1:8001/docs](http://127.0.0.1:8001/docs).
 
 Démarrer le dashboard en développement dans un second terminal :
 
@@ -112,13 +114,18 @@ cd dashboard
 npm run dev
 ```
 
+Le dashboard de développement est accessible sur [http://127.0.0.1:5173](http://127.0.0.1:5173). Il utilise automatiquement l’API 5G sur le port `8001`.
+
 ## Lancement avec Docker
 
 ```bash
 docker compose up --build
 ```
 
-Le dashboard est servi par Nginx sur le port `80`. L’API écoute sur le port `8000` à l’intérieur du réseau Docker et les routes `/api`, `/ws`, `/metrics` et `/health` sont relayées par Nginx.
+Le dashboard est servi par Nginx sur le port `80`. L’API écoute sur le port `8000` à l’intérieur du réseau Docker et est exposée sur le port hôte `8001`. Les routes `/api`, `/ws`, `/metrics` et `/health` sont relayées par Nginx.
+
+- Interface Docker : [http://127.0.0.1](http://127.0.0.1)
+- API Docker : [http://127.0.0.1:8001/health](http://127.0.0.1:8001/health)
 
 Arrêter les services :
 
