@@ -1,0 +1,114 @@
+# ========================
+# Python Core
+# ========================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.ipynb_checkpoints/
+
+# ========================
+# Virtual Environments
+# ========================
+venv/
+env/
+ENV/
+.venv/
+
+# ========================
+# Environment Variables
+# ========================
+.env
+.env.*
+
+# ========================
+# Data Files
+# Keep essential datasets if small
+# Ignore heavy/local DB files
+# ========================
+data/*.db
+data/*.sqlite
+data/*.sqlite3
+*.parquet
+*.feather
+
+# ========================
+# Model Files
+# Ignore heavy training artifacts
+# Keep lightweight inference files if needed
+# ========================
+# models/*.pt      # KEEP — lstm_best.pt is a tracked artifact
+models/*.pth
+models/*.h5
+# models/*.zip     # KEEP — ppo_agent.zip is a tracked artifact
+checkpoints/
+*.ckpt
+*.bin
+
+# ========================
+# Logs & Experiment Outputs
+# ========================
+logs/
+*.log
+runs/
+ppo_tensorboard/
+
+# ========================
+# Reports / Generated Outputs
+# ========================
+# reports/*.png    # KEEP — shap_summary.png is a tracked artifact
+
+# ========================
+# Testing & Coverage
+# ========================
+.pytest_cache/
+.coverage
+htmlcov/
+*.cover
+
+# ========================
+# Frontend (React / Vite)
+# ========================
+node_modules/
+frontend/node_modules/
+frontend/dist/
+
+# ========================
+# Build / Distribution
+# ========================
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# ========================
+# IDE / Editor
+# ========================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ========================
+# OS Files
+# ========================
+.DS_Store
+Thumbs.db
+
+# ========================
+# Temporary / Output Files
+# ========================
+test_*.txt
+
+# ========================
+# Debug / Verification Scripts
+# ========================
+verify_*.py
+scripts/verify_*.py
+
+# ========================
+# Optional (Uncomment if needed)
+# ========================
+# models/*.pkl     # If scaler.pkl becomes large
+# data/*.csv       # If dataset grows large
